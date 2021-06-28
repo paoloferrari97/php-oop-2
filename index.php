@@ -135,6 +135,8 @@ $cartaPaolo = new CartaCredito("Visa", 2022, 54546);
 
 var_dump($cartaPaolo);
 
+//var_dump($cartaPaolo->circuito);
+
 $paolo->setCartaCredito($cartaPaolo);
 
 var_dump($paolo);
