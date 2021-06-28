@@ -66,3 +66,14 @@ class Utente
         $this->cittadinanza = $cittadinanza;
     }
 }
+
+class UtentePremium extends Utente
+{
+    protected $durataAbbonamento;
+
+    function __construct(string $nome, string $cognome, int $eta, int $cittadinanza, float $durataAbbonamento)
+    {
+        parent::__construct($nome,  $cognome,  $eta,  $cittadinanza);
+        $this->durataAbbonamento = $durataAbbonamento;
+    }
+}
