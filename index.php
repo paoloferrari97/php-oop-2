@@ -14,6 +14,12 @@ class Prodotto
         $this->prezzo = $prezzo;
         $this->quantitàDisponibile = $quantitàDisponibile;
     }
+
+    public function setSconto(int $sconto)
+    {
+        $this->prezzo = ($this->prezzo * (100 - $sconto)) / 100;
+        $this->prezzo = round($this->prezzo, 2);
+    }
 }
 
 class Computer extends Prodotto
@@ -92,3 +98,11 @@ class UtenteAnziano extends Utente
         parent::__construct($nome,  $cognome,  $eta,  $cittadinanza);
     }
 }
+
+$mario = new UtenteAnziano("Mario", "Mariotti", 67, "Italiana");
+
+var_dump($mario);
+
+$asus->setSconto(13);
+
+var_dump($asus);
