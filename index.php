@@ -71,6 +71,14 @@ class Utente
         $this->eta = $eta;
         $this->cittadinanza = $cittadinanza;
     }
+
+    public function setCartaCredito(string $circuito, int $annoScadenza, int $numeroCarta)
+    {
+        $this->CartaDiCredito = [];
+        $this->CartaDiCredito["circuito"] = $circuito;
+        $this->CartaDiCredito["annoScadenza"] = $annoScadenza;
+        $this->CartaDiCredito["numeroCarta"] = $numeroCarta;
+    }
 }
 
 class UtentePremium extends Utente
