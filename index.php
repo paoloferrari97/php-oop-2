@@ -72,12 +72,13 @@ class Utente
         $this->cittadinanza = $cittadinanza;
     }
 
-    public function setCartaCredito(string $circuito, int $annoScadenza, int $numeroCarta)
+    public function setCartaCredito($carta)
     {
-        $this->CartaDiCredito = [];
-        $this->CartaDiCredito["circuito"] = $circuito;
-        $this->CartaDiCredito["annoScadenza"] = $annoScadenza;
-        $this->CartaDiCredito["numeroCarta"] = $numeroCarta;
+        /* $this->CartaDiCredito = [];
+        $this->CartaDiCredito["circuito"] = $carta->circuito;
+        $this->CartaDiCredito["annoScadenza"] = $carta->annoScadenza;
+        $this->CartaDiCredito["numeroCarta"] = $carta->numeroCarta; */
+        $this->CartaDiCredito = $carta;
     }
 }
 
@@ -129,3 +130,11 @@ class CartaCredito
         $this->numeroCarta = $numeroCarta;
     }
 }
+
+$cartaPaolo = new CartaCredito("Visa", 2022, 54546);
+
+var_dump($cartaPaolo);
+
+$paolo->setCartaCredito($cartaPaolo);
+
+var_dump($paolo);
