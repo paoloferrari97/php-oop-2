@@ -58,7 +58,7 @@ class Utente
     protected $eta;
     protected $cittadinanza;
 
-    function __construct(string $nome, string $cognome, int $eta, int $cittadinanza)
+    function __construct(string $nome, string $cognome, int $eta, string $cittadinanza)
     {
         $this->nome = $nome;
         $this->cognome = $cognome;
@@ -69,11 +69,26 @@ class Utente
 
 class UtentePremium extends Utente
 {
-    protected $durataAbbonamento;
+    protected $durataMesiAbbonamento;
+    protected $sconto = 15;
 
-    function __construct(string $nome, string $cognome, int $eta, int $cittadinanza, float $durataAbbonamento)
+    function __construct(string $nome, string $cognome, int $eta, string $cittadinanza, float $durataMesiAbbonamento)
     {
         parent::__construct($nome,  $cognome,  $eta,  $cittadinanza);
-        $this->durataAbbonamento = $durataAbbonamento;
+        $this->durataMesiAbbonamento = $durataMesiAbbonamento;
+    }
+}
+
+$paolo = new UtentePremium("Paolo", "Ferrari", 24, "Italiana", "12");
+
+var_dump($paolo);
+
+class UtenteAnziano extends Utente
+{
+    protected $sconto = 20;
+
+    function __construct(string $nome, string $cognome, int $eta, string $cittadinanza)
+    {
+        parent::__construct($nome,  $cognome,  $eta,  $cittadinanza);
     }
 }
