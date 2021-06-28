@@ -49,3 +49,20 @@ class Maglietta extends Prodotto
 $lacoste = new Maglietta("Lacoste", "Lorem ipsum dolor sit amte consectetur adipiscing elit.", 49.99, 13, "Verde", "M");
 
 var_dump($lacoste);
+
+
+class Utente
+{
+    public $nome;
+    public $cognome;
+    protected $eta;
+    protected $cittadinanza;
+
+    function __construct(string $nome, string $cognome, int $eta, int $cittadinanza)
+    {
+        $this->nome = $nome;
+        $this->cognome = $cognome;
+        $this->eta = $eta;
+        $this->cittadinanza = $cittadinanza;
+    }
+}
