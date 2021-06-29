@@ -73,15 +73,22 @@ class Studente extends Persona
     use setterUniversità;
 }
 
-$paolo = new Persona("Paolo", "Ferrari", 24, "Brescia");
+/* $paolo = new Persona("Paolo", "Ferrari", 24, "Brescia"); */
 
-$mario = new Studente("Mario", "Mariotti", 42, "Bergamo", "UNIBG", "Giurisprudenza");
+/* $mario = new Studente("Mario", "Mariotti", 42, "Bergamo", "UNIBG", "Giurisprudenza"); */
 
-try {
+/* try {
     echo $paolo->setComuneResidenza(75);
 } catch (Exception $e) {
     echo "Eccezione: " . $e->getMessage();
-}
+} */
+
+$studenti = [
+    new Studente("Mario", "Mariotti", 52, "Berzo", "UNIBS", "Medicina"),
+    new Studente("Luigi", "Luigiotti", 25, "Inferiore", "UNIBS", "Ingegneria"),
+    new Studente("Piero", "Pierotti", 35, "Borno", "UNICAT", "Lingue"),
+    new Studente("Gino", "Ginotti", 27, "Breno", "UNICAT", "Matematica")
+];
 
 ?>
 
@@ -96,6 +103,13 @@ try {
 </head>
 
 <body>
+
+    <?php foreach ($studenti as $studente) : ?>
+    <p>
+        <?php echo $studente->getNomeCompleto(); ?>
+    </p>
+    <?php endforeach ?>
+
 </body>
 
 </html>
