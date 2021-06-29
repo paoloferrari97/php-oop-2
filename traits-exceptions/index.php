@@ -18,4 +18,13 @@ class Persona
 
 class Studente extends Persona
 {
+    protected $università;
+    protected $indirizzo;
+
+    public function __construct($nome, $cognome, $eta, $comuneResidenza, $università, $indirizzo)
+    {
+        parent::__construct($nome, $cognome, $eta, $comuneResidenza);
+        $this->università = $università;
+        $this->indirizzo = $indirizzo;
+    }
 }
