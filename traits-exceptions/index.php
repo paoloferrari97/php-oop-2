@@ -78,7 +78,8 @@ class Studente extends Persona
 /* $mario = new Studente("Mario", "Mariotti", 42, "Bergamo", "UNIBG", "Giurisprudenza"); */
 
 /* try {
-    echo $paolo->setComuneResidenza(75);
+    echo
+    $studente->setComuneResidenza(75);
 } catch (Exception $e) {
     echo "Eccezione: " . $e->getMessage();
 } */
@@ -107,9 +108,19 @@ $studenti = [
     <?php foreach ($studenti as $studente) : ?>
     <p>
         <?php echo $studente->getNomeCompleto(); ?>
-    </p>
-    <?php endforeach ?>
 
+    </p>
+    <p>
+        <?php
+            try {
+                /* echo */
+                $studente->setComuneResidenza(75);
+            } catch (Exception $e) {
+                echo "Eccezione: " . $e->getMessage();
+            }
+            ?>
+        <?php endforeach ?>
+    </p>
 </body>
 
 </html>
