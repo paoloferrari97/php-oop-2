@@ -7,7 +7,7 @@ class Persona
     protected $eta;
     protected $comuneResidenza;
 
-    public function __construct($nome, $cognome, $eta, $comuneResidenza)
+    public function __construct(string $nome, string $cognome, int $eta, string $comuneResidenza)
     {
         $this->nome = $nome;
         $this->cognome = $cognome;
@@ -22,6 +22,10 @@ class Persona
 
     public function setComuneResidenza($comun)
     {
+        if (!is_string($comun)) {
+            throw new Exception("Il comune di residenza inserito non è una stringa!");
+        }
+
         $this->comuneResidenza = $comun;
     }
 }
@@ -47,7 +51,7 @@ class Studente extends Persona
     protected $università;
     protected $indirizzo;
 
-    public function __construct($nome, $cognome, $eta, $comuneResidenza, $università, $indirizzo)
+    public function __construct(string $nome, string $cognome, int $eta, string $comuneResidenza, string $università, string $indirizzo)
     {
         parent::__construct($nome, $cognome, $eta, $comuneResidenza);
         $this->università = $università;
@@ -72,6 +76,12 @@ class Studente extends Persona
 $paolo = new Persona("Paolo", "Ferrari", 24, "Brescia");
 
 $mario = new Studente("Mario", "Mariotti", 42, "Bergamo", "UNIBG", "Giurisprudenza");
+
+try {
+    echo $paolo->setComuneResidenza(75);
+} catch (Exception $e) {
+    echo "Eccezione: " . $e->getMessage();
+}
 
 ?>
 
