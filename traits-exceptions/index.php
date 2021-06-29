@@ -26,6 +26,22 @@ class Persona
     }
 }
 
+trait getterEta
+{
+    public function getEta()
+    {
+        return $this->eta;
+    }
+}
+
+trait setterUniversità
+{
+    public function setUniversità($uni)
+    {
+        $this->università = $uni;
+    }
+}
+
 class Studente extends Persona
 {
     protected $università;
@@ -47,4 +63,29 @@ class Studente extends Persona
     {
         $this->indirizzo = $indiriz;
     }
+
+    use getterEta;
+
+    use setterUniversità;
 }
+
+$paolo = new Persona("Paolo", "Ferrari", 24, "Brescia");
+
+$mario = new Studente("Mario", "Mariotti", 42, "Bergamo", "UNIBG", "Giurisprudenza");
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
