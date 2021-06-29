@@ -14,6 +14,16 @@ class Persona
         $this->eta = $eta;
         $this->comuneResidenza = $comuneResidenza;
     }
+
+    public function getNomeCompleto()
+    {
+        return $this->nome . " " . $this->cognome;
+    }
+
+    public function setComuneResidenza($comun)
+    {
+        $this->comuneResidenza = $comun;
+    }
 }
 
 class Studente extends Persona
@@ -26,5 +36,15 @@ class Studente extends Persona
         parent::__construct($nome, $cognome, $eta, $comuneResidenza);
         $this->università = $università;
         $this->indirizzo = $indirizzo;
+    }
+
+    public function getUniversità()
+    {
+        return $this->università;
+    }
+
+    public function setIndirizzo($indiriz)
+    {
+        $this->indirizzo = $indiriz;
     }
 }
