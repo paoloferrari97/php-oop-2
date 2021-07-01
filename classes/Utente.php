@@ -23,4 +23,14 @@ class Utente
         $this->CartaDiCredito["numeroCarta"] = $carta->numeroCarta; */
         $this->CartaDiCredito = $carta;
     }
+
+    public function getEta()
+    {
+        return $this->eta;
+    }
+
+    public function getCittadinanza()
+    {
+        return $this->cittadinanza;
+    }
 }

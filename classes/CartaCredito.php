@@ -11,4 +11,19 @@ class CartaCredito
         $this->annoScadenza = $annoScadenza;
         $this->numeroCarta = $numeroCarta;
     }
+
+    public function getCircuito()
+    {
+        return $this->circuito;
+    }
+
+    public function getScadenza()
+    {
+        return $this->annoScadenza;
+    }
+
+    public function getNumero()
+    {
+        return $this->numeroCarta;
+    }
 }
